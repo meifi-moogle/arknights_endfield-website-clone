@@ -25,3 +25,43 @@ video {
 body {
     font-family: 'Source Sans 3', sans-serif;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    background-color: #1a1a1a;
+    background-image: url("./images/nav-decoration.jpg");
+    color: white;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+.navbar-links li a:hover {
+    color: #fff100;
+}
+
+@media (width < 660px) {
+    .navbar-links {
+        display: none;
+    }
+}
