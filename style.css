@@ -1,4 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
+:root {
+    --fs-s: .8rem;
+    --fs-m: 1rem;
+    --fs-h3: 1.2rem;
+    --fs-l: 1.5rem;
+    --fs-xl: 2.2rem;
+}
+
+@media (width < 660px) {
+    :root {
+        --fs-s: .6rem;
+        --fs-m: .8rem;
+        --fs-h3: 1rem;
+        --fs-l: 1.3rem;
+        --fs-xl: 2rem;
+    }
+}
 
 *,
 *::before,
@@ -157,4 +176,102 @@ button {
 
 .play-btn-paragraph .play-btn {
     margin-bottom: 2rem;
+}
+
+
+
+.img-fixed-background {
+    background-image: url("./images/fixed-bg.jpg");
+    padding-block: 25dvh;
+    background-attachment: fixed;
+}
+
+
+.img-banner {
+    background-image: url("./images/block-texture.jpg");
+    z-index: 0;
+    height: 27vh;
+}
+
+.img-banner div {
+    font-family: 'Inter', sans-serif;
+    font-size: 10vw;
+    padding-left: 2rem;
+    margin-top: 5vh;
+    opacity: 0.1;
+}
+
+.op-img-wrapper {
+    z-index: 3;
+    width: 90%;
+    margin-left: auto;
+}
+
+.img-operator {
+    margin-top: -5%;
+    padding-block: 55%;
+}
+
+.img-operator-0 { background-image: url("./images/char-1.svg"); }
+.img-operator-1 { background-image: url("./images/char-2.svg"); }
+.img-operator-2 { background-image: url("./images/char-3.png"); }
+.img-operator-3 { background-image: url("./images/char-4.png"); }
+.img-operator-4 { background-image: url("./images/char-5.png"); }
+
+
+.img-operator { grid-area: image }
+.character-info { grid-area: text; }
+
+.grid-operators-layout {
+    margin-top: 13vh;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'image text';
+}
+
+
+.character-info { z-index: 1; }
+.character-info h2 { font-size: var(--fs-xl); }
+.character-info .h3 { font-size: var(--fs-h3); padding-bottom: 1rem; }
+
+.character-info .bio {
+    font-size: var(--fs-m);
+    margin-bottom: .5rem;
+}
+
+
+.endfield-decoration {
+    font-size: var(--fs-s);
+    color: white;
+    background-color: black;
+    padding-inline: .5rem;
+    margin-block: 1rem;
+
+    position: relative;
+    display: inline-block;
+}
+
+.endfield-decoration::before,
+.endfield-decoration::after {
+    content: '';
+    height: 80%;
+    display: block;
+    position: absolute;
+}
+
+.endfield-decoration::before {
+    background-color: #fff100;
+    width: 100vw;
+    right: 100%;
+    bottom: 0;
+    overflow-x: clip;
+}
+
+.endfield-decoration::after {
+    background-color: gray;
+    width: 100%;
+    left: 100%;
+    bottom: 0;
+    overflow-x: clip;
 }
