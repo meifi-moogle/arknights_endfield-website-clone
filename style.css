@@ -200,6 +200,8 @@ button {
     margin-top: 5vh;
     opacity: 0.1;
 }
+@media (width < 1200px) { .img-banner div { padding-top: 4vh; } }
+@media (width < 1000px) { .img-banner div { padding-top: 8vh; } }
 
 .op-img-wrapper {
     z-index: 3;
@@ -210,7 +212,30 @@ button {
 .img-operator {
     margin-top: -5%;
     padding-block: 55%;
+    animation: slide-in-alt 1000ms;
 }
+
+/* Create animations for Operators appearances */
+@keyframes slide-in {
+    from {
+      transform: translateX(-10%);
+      opacity: 0.25;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+@keyframes slide-in-alt {
+    from {
+      transform: translateX(-10%);
+      opacity: 0.25;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
 
 .img-operator-0 { background-image: url("./images/char-1.svg"); }
 .img-operator-1 { background-image: url("./images/char-2.svg"); }
@@ -274,4 +299,69 @@ button {
     left: 100%;
     bottom: 0;
     overflow-x: clip;
+}
+
+
+.character-select-wrapper {
+    width: 70%;
+    height: 35%;
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .5rem;
+}
+
+
+.img-char-box {
+    background-position: 6.5%;
+    cursor: pointer;
+    background-color: #fff100;
+    position: relative;
+    transition: 0.6s ease background-position;
+}
+.img-char-box:hover {
+    background-position: center;
+}
+
+
+
+
+.img-char-box-1 { background-image: url("./images/portrait01.webp"); }
+.img-char-box-2 { background-image: url("./images/portrait02.webp"); }
+.img-char-box-3 { background-image: url("./images/portrait03.webp"); }
+.img-char-box-4 { background-image: url("./images/portrait04.webp"); }
+.img-char-box-5 { background-image: url("./images/portrait05.webp"); }
+
+
+.active {
+    background-position: center;
+}
+.inactive {
+    background-color: #44443c;
+}
+
+.inactive::before,
+.inactive::after,
+.img-char-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Grayed out filter  */
+.inactive::before {
+    background-color: #343432;
+    opacity: 0.8;
+}
+
+/* Change background color on hover + Add yellow filter  */
+.inactive:hover {
+    background-color: #fff100;
+}
+.img-char-box:hover::before {
+    background-color: #f6ff00;
+    opacity: 0.5;
 }
