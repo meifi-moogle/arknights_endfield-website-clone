@@ -521,11 +521,15 @@ button {
 
 .card-text span { font-size: var(--fs-s); }
 
-.img-card-1 {
-    background-image: url("./images/technical-test-notice.jpg");
+.img-card {
     padding-top: 60%;
     background-size: 100%;
 }
+
+.img-card-1 { background-image: url("./images/test-end-notice.jpg"); }
+.img-card-2 { background-image: url("./images/test-start-notice.jpg"); }
+.img-card-3 { background-image: url("./images/test-access-notice.jpg"); }
+.img-card-4 { background-image: url("./images/content-creators-notice.jpg"); }
 
 
 
