@@ -15,7 +15,17 @@
         --fs-m: .8rem;
         --fs-h3: 1rem;
         --fs-l: 1.3rem;
-        --fs-xl: 2rem;
+        --fs-xl: 1.6rem;
+    }
+}
+
+@media (width < 460px) {
+    :root {
+        --fs-s: .4rem;
+        --fs-m: .6rem;
+        --fs-h3: .8rem;
+        --fs-l: 1.1rem;
+        --fs-xl: 1.3rem;
     }
 }
 
@@ -185,6 +195,18 @@ button {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .img-fixed-background {
     background-image: url("./images/fixed-bg.jpg");
     padding-block: 25dvh;
@@ -269,13 +291,14 @@ button {
     z-index: 1;
 }
 
-.character-info h2 {
-    font-size: var(--fs-xl);
+.character-info .h2 { 
+    font-size: var(--fs-xl); 
+    font-weight: 700;
 }
 
 .character-info .h3 {
     font-size: var(--fs-h3);
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .character-info .bio {
@@ -294,6 +317,17 @@ button {
     position: relative;
     display: inline-block;
 }
+
+
+@media (width < 660px) {
+    .op-name {margin-bottom: -1rem; }
+    .character-info .h3 { margin-bottom: .5rem; }
+    .endfield-decoration { margin-bottom: .5rem; }
+
+    .character-info { padding-right: 4vw; }
+}
+
+
 
 .endfield-decoration::before, .endfield-decoration::after {
     content: '';
@@ -319,14 +353,34 @@ button {
 }
 
 
+
 .character-select-wrapper {
-    width: 70%;
-    height: 35%;
-    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: .5rem;
+    width: 35.5vw;
+    height: 16.5vw;
+    margin-top: 3rem;
+    z-index: 10;
 }
+
+@media (width < 600px) and (height < 600px) {
+    .character-select-wrapper {
+        width: 20vh;
+        height: 8.25vh;
+        margin-top: 0;
+    }
+}
+
+@media (width < 900px) and (height > 600px) {
+    .character-select-wrapper {
+        width: 44.5vw;
+        height: 18.5vw;
+        margin-top: 0;
+    }
+}
+
+
 
 
 .img-char-box {
