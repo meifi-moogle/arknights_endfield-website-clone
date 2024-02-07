@@ -11,7 +11,7 @@
 
 @media (width < 660px) {
     :root {
-        --fs-s: .6rem;
+        --fs-s: .8rem;
         --fs-m: .8rem;
         --fs-h3: 1rem;
         --fs-l: 1.3rem;
@@ -21,7 +21,7 @@
 
 @media (width < 460px) {
     :root {
-        --fs-s: .4rem;
+        --fs-s: .5rem;
         --fs-m: .6rem;
         --fs-h3: .8rem;
         --fs-l: 1.1rem;
@@ -444,6 +444,7 @@ button {
     display: inline-block;
 }
 
+
 .img-banner-content h2 {
     font-size: var(--fs-xl);
 }
@@ -478,6 +479,12 @@ button {
     margin-top: 17.5vh;
 }
 
+@media (width < 600px) and (height < 950px) {
+    .img-banner-yellow .banner-text-2 { padding-top: 16vh; }
+    .img-banner-content { padding-top: 4.7vh; }
+}
+
+
 
 .img-diagonal-line {
     background-image: url("./images/section-title-deco.webp");
@@ -488,6 +495,7 @@ button {
     opacity: 0.5;
     z-index: 2;
 }
+@media (width < 800px) { .img-diagonal-line { display: none; } }
 
 .card {
     width: 23.5vw;
@@ -502,7 +510,7 @@ button {
     padding-bottom: 2rem;
 }
 
-@media(width < 1000px) { .card { width: 15rem; } }
+@media(width < 1000px) { .card { width: 20rem; font-size: .8rem; } }
 
 @media (width > 980px) { .left-spaced { margin-left: 35vw; } }
 
@@ -510,6 +518,7 @@ button {
     .left-spaced:not(.cards-flex) {
         margin-left: 2rem;
     }
+
     .left-spaced {
         justify-content: center;
     }
@@ -519,7 +528,7 @@ button {
 
 .card-text h3 { font-weight: 600; }
 
-.card-text span { font-size: var(--fs-s); }
+.card-text span { font-size: .7em; }
 
 .img-card {
     padding-top: 60%;
@@ -569,3 +578,6 @@ footer .gryphline-copyrights {
     font-size: var(--fs-s);
     padding-block: 1rem;
 }
+
+
+
