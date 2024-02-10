@@ -7,6 +7,7 @@
     --fs-h3: 1.2rem;
     --fs-l: 1.5rem;
     --fs-xl: 2.2rem;
+    --fs-banner: 9rem;
 }
 
 @media (width < 660px) {
@@ -16,6 +17,7 @@
         --fs-h3: 1rem;
         --fs-l: 1.3rem;
         --fs-xl: 1.6rem;
+        --fs-banner: 6.7rem;
     }
 }
 
@@ -26,6 +28,7 @@
         --fs-h3: .8rem;
         --fs-l: 1.1rem;
         --fs-xl: 1.3rem;
+        --fs-banner: 5.3rem;
     }
 }
 
@@ -65,6 +68,7 @@ body {
     background-color: #1a1a1a;
     background-image: url("./images/nav-decoration.jpg");
     color: white;
+
 }
 
 .navbar-logo {
@@ -214,34 +218,35 @@ button {
 }
 
 
-.img-banner {
+.img-banner-white {
     background-image: url("./images/block-texture.jpg");
     z-index: 0;
     height: 27vh;
 }
 
-.banner-text:not(.banner-text-2) { padding-left: 2rem; }
+.banner-text-operator { padding-left: 2rem; }
 
-.img-banner div {
+.img-banner-white div {
     font-family: 'Inter', sans-serif;
     font-size: 10vw;
     margin-top: 5vh;
     opacity: 0.1;
 }
 
-@media (width < 1200px) { .img-banner div { padding-top: 4vh; } }
-@media (width < 1000px) { .img-banner div { padding-top: 8vh; } }
+@media (width < 1200px) { .img-banner-white div { padding-top: 4vh; } }
+@media (width < 1000px) { .img-banner-white div { padding-top: 8vh; } }
+@media (width < 700px) { .img-banner-white div { display: none; } }
 
 .op-img-wrapper {
     z-index: 3;
     width: 90%;
-    margin-left: auto;
 }
 
 .img-operator {
     margin-top: -5%;
     padding-block: 55%;
     animation: slide-in-alt 1000ms;
+    z-index: 100;
 }
 
 /* Create animations for Operators appearances */
@@ -318,17 +323,15 @@ button {
     display: inline-block;
 }
 
-
+/* Make space for this text on smaller screens  */
 @media (width < 660px) {
     .op-name {margin-bottom: -1rem; }
     .character-info .h3 { margin-bottom: .5rem; }
     .endfield-decoration { margin-bottom: .5rem; }
-
-    .character-info { padding-right: 4vw; }
 }
 
 
-
+/* Decorate the text using pseudo elements  */
 .endfield-decoration::before, .endfield-decoration::after {
     content: '';
     height: 80%;
@@ -346,11 +349,14 @@ button {
 
 .endfield-decoration::after {
     background-color: gray;
-    width: 100%;
+    width: 40vw;
     left: 100%;
     bottom: 0;
     overflow-x: clip;
 }
+
+
+
 
 
 
@@ -383,6 +389,11 @@ button {
 
 
 
+
+
+
+
+
 .img-char-box {
     background-position: 6.5%;
     cursor: pointer;
@@ -390,9 +401,7 @@ button {
     position: relative;
     transition: 0.6s ease background-position;
 }
-
 .img-char-box:hover { background-position: center; }
-
 
 
 
@@ -439,7 +448,6 @@ button {
 
 .img-banner-content {
     z-index: 2;
-    margin-top: 28.5vh;
     position: relative;
     display: inline-block;
 }
@@ -449,64 +457,20 @@ button {
     font-size: var(--fs-xl);
 }
 
-.pseudo-line::before,
-.pseudo-line::after {
-    content: '';
-    display: block;
-    position: absolute;
-    height: 1rem;
-    top: 11vh;
-}
-
-.pseudo-line::before {
-    background: black;
-    width: 50vw;
-}
-
-.pseudo-line::after {
-    background: gray;
-    width: 65vw;
-    left: 35vw;
-}
 
 
-.img-banner-yellow {
-    background-image: url("./images/block-texture-yellow.jpg");
-    height: 44vh;
-}
-
-.img-banner-yellow .banner-text-2 {
-    margin-top: 17.5vh;
-}
-
-@media (width < 600px) and (height < 950px) {
-    .img-banner-yellow .banner-text-2 { padding-top: 16vh; }
-    .img-banner-content { padding-top: 4.7vh; }
-}
-
-
-
-.img-diagonal-line {
-    background-image: url("./images/section-title-deco.webp");
-    padding-block: 1%;
-    background-size: 26.5%;
-    margin-top: 3vh;
-    margin-left: 10vw;
-    opacity: 0.5;
-    z-index: 2;
-}
-@media (width < 800px) { .img-diagonal-line { display: none; } }
 
 .card {
     width: 23.5vw;
     background-color: rgb(241, 241, 241);
+    cursor: pointer;
 }
 
 .cards-flex {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    padding-top: 50vh;
+    padding-top: 2rem;
     padding-bottom: 2rem;
 }
 
@@ -581,3 +545,83 @@ footer .gryphline-copyrights {
 
 
 
+
+/* Heavier layout changes for mobile screens */
+
+@media (width < 700px) and (height < 1000px) {
+
+    .grid-operators-layout {
+        margin-top: 15vh;
+        display: flex;
+    }
+
+    .grid-operators-layout {
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+
+    .op-img-wrapper {
+        margin-inline: auto;
+        margin-top: 2rem;
+    }
+
+    .character-info { margin-inline: auto; }
+
+    .character-select-wrapper {
+        padding-top: .5rem;
+        width: 95vw;
+        height: 45vw;
+    }
+
+    .info-text { display: none; }
+
+    .img-banner { height: 38vh; }
+}
+
+
+
+
+
+
+
+
+.section-title {
+    font-size: var(--fs-xl);
+    font-weight: 800;
+}
+
+.banner-yellow-wrapper {
+    margin-top: auto;
+}
+
+.text-banner-yellow {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--fs-banner);
+    opacity: 0.1;
+}
+
+.banner-news-wrapper {
+    margin-top: auto;
+}
+
+.img-banner-news {
+    background-image: url("./images/block-texture-yellow.jpg");
+    width: 100%;
+    height: 16rem;
+}
+
+.deco-line-left {
+    height: 1rem;
+    background-color: silver;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.deco-line-left::before {
+    content: '-';
+    display: inline-block;
+    background-color: black;
+    width: 100%;
+    height: 1rem;
+    transform: translateX(-50%);
+}
