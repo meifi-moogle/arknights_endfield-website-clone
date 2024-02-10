@@ -56,24 +56,40 @@
 body {
     font-family: 'Source Sans 3', sans-serif;
     font-size: var(--fs-m);
+    padding-top: 6rem;
+}
+
+.nav-section {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 1rem;
-
-    background-color: #1a1a1a;
-    background-image: url("./images/nav-decoration.jpg");
+    /* background-color: #1a1a1a; */
     color: white;
+    position: relative;
+}
+.navbar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(90deg,#ff00f0 17.5%,#fff100 17.5% 35.6%,#00ffa2 35.6% 100%);
+    width: 100%;
+    height: 2px;
 
 }
 
-.navbar-logo {
-    font-size: 1.5rem;
-    margin: .5rem;
+.img-navbar-logo {
+    margin-inline: 2rem;
+    padding-block: .3rem;
 }
+
 
 .navbar-links ul,
 footer ul {
@@ -103,7 +119,6 @@ footer li a {
 
 /* Using Grid to Stack content with images and video */
 .stacked {
-    /* color: white; */
     display: grid;
 }
 
@@ -113,9 +128,16 @@ footer li a {
 }
 
 .stacked > .img-main-preview,
-.video-main {
+.video-main, .img-nav-decoration {
     z-index: -1;
 }
+
+.img-nav-decoration {
+    background-image: url("./images/nav-decoration.jpg");
+    padding-block: 3rem;
+    background-position: center;
+}
+@media (width < 700px) { .img-nav-decoration { background-position: 32%; } }
 
 
 .section-video {
@@ -198,7 +220,7 @@ button::after{ margin-left: 1.5rem; }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40%;
+    gap: 15%;
     padding-left: 3rem;
 }
 
@@ -215,14 +237,21 @@ button::after{ margin-left: 1.5rem; }
         margin-top: auto;
     }
 
-    .side-info-svg {
+    .img-logo-big {
         display: none;
     }
 }
 
-.play-btn-paragraph .play-btn {
+.play-btn-paragraph .play-button {
     margin-bottom: 2rem;
 }
+
+.play-btn-paragraph p {
+    font-size: var(--fs-s);
+    padding-right: min(1rem, 2rem);
+}
+@media (width < 660px) { .play-btn-paragraph p { font-size: 1rem} }
+
 
 
 
@@ -267,6 +296,7 @@ button::after{ margin-left: 1.5rem; }
 .op-img-wrapper {
     z-index: 3;
     width: 90%;
+    margin-left: auto;
 }
 
 .img-operator {

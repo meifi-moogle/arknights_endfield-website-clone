@@ -10,24 +10,29 @@
 </head>
 
 <body>
-    <nav class="navbar img-nav-decoration">
-        <div class="navbar-logo">ENDFIELD</div>
-        <div class="navbar-links">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">OPERATORS</a></li>
-                <li><a href="#">TALOS-II</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">MEDIA</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="nav-section stacked">
+        <div class="img-nav-decoration"></div>
+        <nav class="navbar">
+
+            <img src="./images/endfield-logo.png" width="90rem" height="auto" class="img-navbar-logo" loading="lazy"
+                alt="">
+
+            <div class="navbar-links">
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#section-operators">OPERATORS</a></li>
+                    <li><a href="#section-news">NEWS</a></li>
+                    <li><a href="#links">LINKS</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
 
 
 
 
-    <div class="stacked section-video">
+    <div id="home" class="section-video stacked">
         <div class="sign-in-button">
             <button>SIGN UP</button>
         </div>
@@ -37,11 +42,21 @@
     </div>
 
 
-    <div class="stacked">
+    <div class="section-main-image stacked">
         <div class="main-img-side-content">
-            <h1 class="side-info-svg">Arknights ENDFIELD</h1>
+
+            <img src="./images/endfield-logo.png" class="img-logo-big" width="65%" alt="" loading="lazy">
+
             <div class="play-btn-paragraph">
-                <button class="play-btn">Play</button>
+                <a target="_blank" rel="noopener"
+                    href="https://www.youtube.com/watch?v=Yt7eUS1X0Ec&ab_channel=Arknights%3AEndfield">
+                    <svg class="play-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 321 321" width="3rem">
+                        <g xmlns="http://www.w3.org/2000/svg" fill="#fdfd1f">
+                            <path
+                                d="M0 308h13v13H0zM0 0h13v13H0zM308 308h13v13h-13zM308 0h13v13h-13zM32.5 108.9h-19V13.4H109v19H32.5v76.5zM212.5 32.4v-19H308v95.5h-19V32.4h-76.5zM289 212.4h19v95.5h-95.5v-19H289v-76.5zM109 288.9v19H13.5v-95.5h19v76.5H109zM235.5 160.5L111 88.6v143.8l124.5-71.9z" />
+                        </g>
+                    </svg>
+                </a>
                 <p>Arknights: Endfield is a real-time 3D RPG with strategic elements by HYPERGRYPH.</p>
             </div>
         </div>
@@ -51,7 +66,7 @@
 
 
 
-    <div class="stacked">
+    <div id="section-operators" class="stacked">
 
         <div class="img-banner-white">
             <div class="banner-text-operator">OPERATORS</div>
@@ -95,7 +110,7 @@
 
     </div>
 
-    <div class="stacked">
+    <div id="section-news" class="stacked">
 
         <div class="img-banner-news"></div>
 
@@ -112,7 +127,7 @@
     </div>
 
 
-    <div class="stacked">
+    <div class="news-cards stacked">
 
         <div class="cards-flex left-spaced">
 
@@ -157,7 +172,7 @@
     </div>
 
 
-    <footer>
+    <footer id="links">
         <div class="socials-links">
             <ul>
                 <li><a href="#">i</a></li>
