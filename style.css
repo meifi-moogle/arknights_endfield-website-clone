@@ -372,10 +372,9 @@ button::after{ margin-left: 1.5rem; }
 }
 
 
-.character-info {
-    z-index: 1;
-    padding-right: 4rem;
-}
+.character-info { z-index: 1; }
+
+@media (width > 700px) { .character-info { padding-right: 4rem; } }
 
 .character-info .h2 { 
     font-size: var(--fs-xl); 
