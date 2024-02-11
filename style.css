@@ -86,9 +86,9 @@ body {
     height: 2px;
 }
 
-.img-navbar-logo {
-    margin-inline: 2rem;
-}
+.img-navbar-logo { margin-right: 2rem; }
+@media (width > 660px) {.img-navbar-logo { margin-left: 2rem; } }
+
 
 
 .navbar-links ul,
@@ -158,7 +158,7 @@ footer li a {
     padding-block: 3rem;
     background-position: center;
 }
-@media (width < 700px) { .img-nav-decoration { background-position: 32%; } }
+@media (width < 700px) { .img-nav-decoration { background-position: 35%; } }
 
 
 .section-video {
@@ -394,15 +394,13 @@ button::after{ margin-left: 1.5rem; }
     font-weight: 800;
 }
 
-.character-info .h3 {
-    font-size: var(--fs-h3);
+.character-info .h3, .character-info .bio {
     margin-bottom: .5rem;
+    padding-right: 1.5rem;
 }
 
-.character-info .bio {
-    font-size: var(--fs-m);
-    margin-bottom: .5rem;
-}
+.character-info .h3 { font-size: var(--fs-h3); }
+.character-info .bio { font-size: var(--fs-m); }
 
 
 .endfield-decoration {
