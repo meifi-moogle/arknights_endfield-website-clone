@@ -312,7 +312,7 @@ button::after{ margin-left: 1.5rem; }
 
 @media (width < 1200px) { .img-banner-white div { padding-top: 4vh; } }
 @media (width < 1000px) { .img-banner-white div { padding-top: 6.5vh; } }
-@media (width > 1500px) { .img-banner-white div { padding-top: 0vh; } }
+@media (width > 1500px) { .img-banner-white div { margin-top: 0rem; } }
 
 @media (width < 700px) { .img-banner-white div { display: none; } }
 
@@ -610,7 +610,7 @@ button::after{ margin-left: 1.5rem; }
     flex-wrap: wrap;
     gap: 2rem;
     padding-block: 2rem;
-    padding-right: 2rem
+    padding-inline: 2rem
 }
 
 @media(width < 1000px) { .card { width: 20rem; font-size: .8rem; } }
