@@ -70,7 +70,6 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem;
-    /* background-color: #1a1a1a; */
     color: white;
     position: relative;
 }
@@ -79,14 +78,16 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(90deg,#ff00f0 17.5%,#fff100 17.5% 35.6%,#00ffa2 35.6% 100%);
+    background-image:
+     linear-gradient(90deg,#ff00f0 17.5%,
+     #fff100 17.5% 35.6%,
+     #00ffa2 35.6% 100%);
     width: 100%;
     height: 2px;
 }
 
 .img-navbar-logo {
     margin-inline: 2rem;
-    padding-block: .3rem;
 }
 
 
@@ -113,6 +114,27 @@ footer li a {
 
 @media (width < 660px) { .navbar-links { display: none; } }
 
+.nav-right-wrapper {
+    background-color: yellow;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 12rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url("./images/nav-yellow-bg.jpg");
+    background-position: right;
+    background-size: 95%;
+    cursor: pointer;
+}
+@media (width < 700px) {
+    .nav-right-wrapper { display: none; }
+}
 
 
 
@@ -176,6 +198,10 @@ button {
     cursor: pointer;
     padding: .5rem 1.7rem;
     border: 2px solid #bcb30a;
+
+    background-image: url("./images/nav-yellow-bg.jpg");
+    background-position: center;
+    background-size: 90%;
 }
 
 button::before, button::after {
@@ -284,12 +310,23 @@ button::after{ margin-left: 1.5rem; }
 .img-banner-white div {
     font-family: 'Inter', sans-serif;
     font-size: 10vw;
-    margin-top: 5vh;
-    opacity: 0.1;
+    /* margin-top: 5vh; */
+    margin-top: 4vh;
+    opacity: 0.45;
+
+    background: repeating-linear-gradient(
+      -55deg,
+      black,
+      black 1px,
+      white 1px,
+      white 4px
+      );
+    background-clip: text;
+    color: transparent;
 }
 
 @media (width < 1200px) { .img-banner-white div { padding-top: 4vh; } }
-@media (width < 1000px) { .img-banner-white div { padding-top: 8vh; } }
+@media (width < 1000px) { .img-banner-white div { padding-top: 6.5vh; } }
 @media (width < 700px) { .img-banner-white div { display: none; } }
 
 .op-img-wrapper {
@@ -330,8 +367,8 @@ button::after{ margin-left: 1.5rem; }
     }
 }
 
-.img-operator-0 { background-image: url("./images/char-1.svg"); }
-.img-operator-1 { background-image: url("./images/char-2.svg"); }
+.img-operator-0 { background-image: url("./images/char-1.png"); }
+.img-operator-1 { background-image: url("./images/char-2.png"); }
 .img-operator-2 { background-image: url("./images/char-3.png"); }
 .img-operator-3 { background-image: url("./images/char-4.png"); }
 .img-operator-4 { background-image: url("./images/char-5.png"); }
@@ -354,12 +391,12 @@ button::after{ margin-left: 1.5rem; }
 
 .character-info .h2 { 
     font-size: var(--fs-xl); 
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .character-info .h3 {
     font-size: var(--fs-h3);
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 .character-info .bio {
@@ -373,7 +410,7 @@ button::after{ margin-left: 1.5rem; }
     color: white;
     background-color: black;
     padding-inline: .5rem;
-    margin-block: 1rem;
+    margin-bottom: 1rem;
 
     position: relative;
     display: inline-block;
@@ -390,7 +427,8 @@ button::after{ margin-left: 1.5rem; }
 /* Decorate the text using pseudo elements  */
 .endfield-decoration::before, .endfield-decoration::after {
     content: '';
-    height: 80%;
+    /* height: 80%; */
+    height: .8rem;
     display: block;
     position: absolute;
 }
@@ -404,11 +442,20 @@ button::after{ margin-left: 1.5rem; }
 }
 
 .endfield-decoration::after {
-    background-color: gray;
     width: 40vw;
     left: 100%;
     bottom: 0;
     overflow-x: clip;
+
+    opacity: 0.45;
+
+    background: repeating-linear-gradient(
+      -55deg,
+      black,
+      black 1px,
+      white 1px,
+      white 4px
+      );
 }
 
 
@@ -519,15 +566,21 @@ button::after{ margin-left: 1.5rem; }
 .card {
     width: 23.5vw;
     background-color: rgb(241, 241, 241);
+    box-shadow: 0 8px 6px -8px black;
     cursor: pointer;
+    transition: .2s ease-out;
+}
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 2px 2px 4px 5px #ccc;
 }
 
 .cards-flex {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-block: 2rem;
+    padding-inline: 2rem
 }
 
 @media(width < 1000px) { .card { width: 20rem; font-size: .8rem; } }
@@ -572,9 +625,13 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-top: 1rem;
+    padding-top: 2rem;
     align-items: center;
     justify-content: center;
+    color: #959595;
+}
+@media (width < 660px) {
+    footer { font-size: .8rem; }
 }
 
 footer li {
@@ -582,16 +639,25 @@ footer li {
 }
 
 .links li {
+    color: rgb(232, 232, 232);
     padding-inline: 1rem;
+    margin-top: .5rem;
     cursor: pointer;
+}
+
+.socials-links {
+    border-bottom: 1px solid #6e6e6e;
+    padding-bottom: 1rem;
 }
 
 footer .gryphline-copyrights {
     text-align: center;
+    padding-block: 1rem;
+    color: #959595;
 }
 
 .links li:nth-child(-n+2) {
-    border-right: 1px solid rgb(83, 83, 83);
+    border-right: 1px solid #6c6c6c;
 }
 
 .copyrights {
@@ -653,11 +719,23 @@ footer .gryphline-copyrights {
 .text-banner-yellow {
     font-family: 'Inter', sans-serif;
     font-size: var(--fs-banner);
-    opacity: 0.1;
+
+    opacity: 0.6;
+    background: repeating-linear-gradient(
+      -55deg,
+      black,
+      black 1px,
+      #f7f719 1px,
+      #f7f719 4px
+      );
+    background-clip: text;
+    color: transparent;
 }
 
 .banner-news-wrapper {
     margin-top: auto;
+    z-index: 1;
+    position: relative;
 }
 
 .img-banner-news {
@@ -667,10 +745,18 @@ footer .gryphline-copyrights {
 }
 
 .deco-line-left {
-    height: 1rem;
-    background-color: silver;
+    height: .8rem;
+    /* background-color: rgb(238, 238, 238); */
     transform: translateX(-50%);
     width: 100%;
+
+    background: repeating-linear-gradient(
+      -55deg,
+      black,
+      black 1px,
+      #f1f117 1px,
+      #f1f117 4px
+      );
 }
 
 .deco-line-left::before {
@@ -678,6 +764,6 @@ footer .gryphline-copyrights {
     display: inline-block;
     background-color: black;
     width: 100%;
-    height: 1rem;
+    height: .8rem;
     transform: translateX(-50%);
 }
